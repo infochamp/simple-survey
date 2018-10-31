@@ -39,6 +39,16 @@ app.get('/lastPage', function(req,res){
      res.send();
   });
 })
+
+app.get('/FourPage.html', function(req,res){
+  fs.readFile('FourPage.html', function (err, data) {
+     res.write(data);
+     res.send();
+  });
+})
+
+
+
 app.use(express.static(path.join(__dirname,'public')));
 app.listen(8080, () => {
   console.log('App running..')
